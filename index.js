@@ -1,6 +1,5 @@
 //  importing the node module .
 
-
 var mongodb = require ('mongodb');
 var ObjectId = mongodb.ObjectID;
 var crypto = require ('crypto');
@@ -95,8 +94,7 @@ var bodyParser = require ('body-parser');
 
                                             response.json('Registration Success ');
                                             console.log ('Registration Success');
-                                          })
-                                  
+                                          }) 
                              }
                        })
                  })
@@ -106,7 +104,6 @@ var bodyParser = require ('body-parser');
                   app.post('/login',(request,response,next)=>{
                     var post_data = request.body;
 
-                
                     var email = post_data.email;
                     var userPassword = post_data.password 
 
@@ -135,22 +132,18 @@ var bodyParser = require ('body-parser');
                                            if (hashed_password == encrypted_password){
                                             response.json('Login Success');
                                             console.log ('Login Success');
-                                              
                                            }
-
                                             else{
                                                 response.json('Wrong Password or Mail ID');
                                                 console.log ('Wrong Password or Mail ID');         
                                             }
-                                        })
+                                   })
                             }
                       })
                 })
              // Start Server 
-                app.listen(3000,()=>{
-
-                       console.log ('Connected to MongoDB Server , WebService running on Port 3000');
+                app.listen(9090,()=>{
+                       console.log ('Connected to MongoDB Server , WebService running on Port 9090');
                 })
             }
-   
         });
